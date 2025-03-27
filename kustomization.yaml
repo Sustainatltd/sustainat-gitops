@@ -1,7 +1,9 @@
-# 🚀 This is the master plan that Flux uses
+# ✅ This is the root of the whole GitOps tree
+# ✅ It tells Flux to apply everything from "apps" and "monitoring"
+
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - apps        # 📦 Loads the apps/kustomization.yaml (which loads all apps)
-  - monitoring  # 📊 Loads monitoring tools (Grafana + Prometheus)
+  - apps        # ✅ This is a FOLDER, not a file!
+  - monitoring  # ✅ Also a FOLDER with its own kustomization.yaml
