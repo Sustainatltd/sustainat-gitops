@@ -1,7 +1,48 @@
+# ✅ sustainat-gitops/apps/backend/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./apps/backend
-  - ./apps/frontend
-  - ./apps/mongo
-  - ./monitoring
+  - backend-deployment.yaml
+  - backend-service.yaml
+
+---
+# ✅ sustainat-gitops/apps/frontend/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - frontend-deployment.yaml
+  - frontend-service.yaml
+
+---
+# ✅ sustainat-gitops/apps/mongo/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - mongo-deployment.yaml
+
+---
+# ✅ sustainat-gitops/monitoring/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - prometheus-deployment.yaml
+  - grafana-deployment.yaml
+  - prometheus-service.yaml
+  - grafana-service.yaml
+
+---
+# ✅ sustainat-gitops/apps/kustomization.yaml (main entry for all apps)
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - backend
+  - frontend
+  - mongo
+
+---
+# ✅ sustainat-gitops/kustomization.yaml (main entry for everything)
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - apps
+  - monitoring
