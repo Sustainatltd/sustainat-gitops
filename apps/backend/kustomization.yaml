@@ -1,5 +1,8 @@
+# 🧩 This file tells Flux how to build only the BACKEND part.
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
+# 📦 These are the exact files to apply (not folders!)
 resources:
-  - deployment.yaml
-  - service.yaml
+  - deployment.yaml   # 🚀 Deploy backend app
+  - service.yaml      # 🌐 Expose backend through a service

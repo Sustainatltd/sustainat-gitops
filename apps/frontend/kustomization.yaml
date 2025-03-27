@@ -1,5 +1,7 @@
+# 🧩 This file tells Flux how to build only the FRONTEND part.
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
-  - deployment.yaml
-  - service.yaml
+  - deployment.yaml   # 🧼 Deploy React frontend
+  - service.yaml      # 🌍 Expose frontend through a service

@@ -1,5 +1,7 @@
+# 🧩 This file is for MongoDB only
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
-  - deployment.yaml
-  - service.yaml
+  - deployment.yaml   # 💾 MongoDB pod
+  - service.yaml      # 🧭 MongoDB service (internal access)

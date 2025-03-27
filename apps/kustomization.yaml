@@ -1,0 +1,8 @@
+# 📦 This is the "apps loader" - it points to 3 app folders
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - backend     # 🔁 Loads apps/backend/kustomization.yaml
+  - frontend    # 🖼️ Loads apps/frontend/kustomization.yaml
+  - mongo       # 💾 Loads apps/mongo/kustomization.yaml

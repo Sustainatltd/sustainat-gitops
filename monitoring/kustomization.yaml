@@ -1,5 +1,7 @@
+# 📊 This file is for setting up monitoring tools (Prometheus + Grafana)
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
-  - prometheus.yaml
-  - grafana.yaml
+  - prometheus.yaml       # 🔍 Prometheus Deployment + Service
+  - grafana.yaml          # 📈 Grafana Deployment + Service
