@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: sustainat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: sustainatltd/sustainat-project-client:latest  # ✅ Always use latest
+          imagePullPolicy: Always  # ✅ Always pull latest image from Docker Hub
+          ports:
+            - containerPort: 3000
