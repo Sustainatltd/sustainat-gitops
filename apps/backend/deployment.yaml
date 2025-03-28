@@ -1,1 +1,21 @@
-# 🧪 Testing Flux automation – added by Sumanth
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: sustainat
+spec:
+  replicas: 1  # 🧒 One backend server pod is enough for now
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: sustainatltd/sustainat-project-server:latest  # ✅ Clean latest tag
+          imagePullPolicy: Always  # 🧽 Pull fresh image every time automatically
+          ports:
+            - containerPort: 5001  # ⚙️ This matches your Node.js backend port
